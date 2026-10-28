@@ -2,19 +2,19 @@
 
 Count how often the **Update branch** button is used on pull requests in a GitHub repository, month by month, and write the result as a CSV.
 
-Example (the numbers are illustrative):
+Example, from a real run:
 
 ```
 $ ./update-branch-stats.sh cli/cli 2025-01 2025-03 -o clicks.csv
-Scanning 212 pull requests in cli/cli...
-  PR 212/212 (#10342)
+Scanning 345 pull requests in cli/cli...
+  PR 345/345 (#10163)
 Wrote clicks.csv
 
 $ cat clicks.csv
 month,update_branch_clicks
-2025-01,14
-2025-02,9
-2025-03,21
+2025-01,50
+2025-02,20
+2025-03,9
 ```
 
 ## How it works
@@ -45,7 +45,7 @@ PR commits are read from `refs/pull/<n>/head`, so squash-merged PRs and deleted 
 ```sh
 brew install gh jq      # or see https://cli.github.com and https://jqlang.github.io/jq
 gh auth login
-git clone https://github.com/<you>/update-branch-stats.git
+git clone https://github.com/muhammadafzalarif/update-branch-stats.git
 cd update-branch-stats
 ```
 
